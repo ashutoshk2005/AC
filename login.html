@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Akhand Classes</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .login-container {
+            width: 350px;
+            margin: 80px auto 0 auto;
+            padding: 40px 32px 32px 32px;
+            background: #f2d7ff;
+            box-shadow: 0 2px 16px rgba(133,0,150,0.08);
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .login-container h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #850096;
+            font-size: 1.6rem;
+        }
+        .login-container input[type="text"],
+        .login-container input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        .login-container button {
+            width: 100%;
+            padding: 12px;
+            background-color: #850096;
+            border: none;
+            color: #fff;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-top: 10px;
+            transition: background 0.2s;
+        }
+        .login-container button:hover {
+            background-color: #5ce4ff;
+            color: #222;
+        }
+        .login-container .link {
+            margin-top: 18px;
+            text-align: center;
+        }
+        .login-container .link a {
+            color: #c008d1;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .login-container .link a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 500px) {
+            .login-container {
+                width: 95vw;
+                padding: 24px 6vw 24px 6vw;
+            }
+        }
+    </style>
+</head>
+<body>
+     <div class="login-container">
+        <h2>Login Page</h2>
+        <form id="loginForm" autocomplete="off">
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+            <div class="link">
+                <p>Don't have an account? <a href="#">Register</a></p>
+            </div>
+        </form>
+    </div>
+
+    
+</body>
+<script>
+// Simple login form feedback 
+document.getElementById('loginForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const user = document.getElementById('username').value.trim();
+    const pass = document.getElementById('password').value.trim();
+    if(user && pass) {
+        alert('Login successful!');
+    } else {
+        alert('Please enter both username and password.');
+    }
+});
+</script>
+</html>

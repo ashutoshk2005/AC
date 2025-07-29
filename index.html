@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Akhand Classes</title>
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">
+      <a href="index.html"><img src="Akhand classes logo recreate - Copy.svg" alt="Logo" /></a>
+    </div>
+    <ul class="nav-links" id="itemList">
+      <li><a href="./index.html">Home</a></li>
+      <li><a href="./About.html">About</a></li>
+      <li><a href="./contact.html">Contact</a></li>
+      <li><a href="./login.html">Login</a></li>
+    </ul>
+    <div class="search-box">
+      <input type="text" id="searchBar" placeholder="Search..." />
+      <button>🔍</button>
+    </div>
+  </nav>
+  <style>
+    /* Responsive Navbar for mobile */
+    @media (max-width: 600px) {
+      .navbar {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+        grid-template-areas:
+          "logo search"
+          "nav nav";
+        align-items: center;
+        row-gap: 8px;
+        padding: 10px 6px;
+      }
+      .navbar .logo {
+        grid-area: logo;
+        justify-self: start;
+      }
+      .navbar .search-box {
+        grid-area: search;
+        justify-self: end;
+        margin-left: 0;
+      }
+      .navbar .nav-links {
+        grid-area: nav;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        justify-items: center;
+      }
+      .navbar .nav-links li {
+        margin: 0;
+        width: 100%;
+        text-align: center;
+      }
+      .navbar ul {
+        flex-direction: row;
+        width: 100%;
+      }
+      .navbar ul li {
+        margin: 0;
+      }
+    }
+
+    /* Responsive slider */
+    @media (max-width: 900px) {
+      .slider img {
+        height: 220px;
+        object-fit: cover;
+      }
+    }
+    @media (max-width: 600px) {
+      .slider img {
+        height: 140px;
+        object-fit: cover;
+      }
+      .slider button.prev,
+      .slider button.next {
+        padding: 6px;
+        font-size: 1.1rem;
+      }
+    }
+
+    /* Responsive notes container */
+    @media (max-width: 900px) {
+      .container {
+        gap: 16px;
+        padding: 10px;
+      }
+      .item {
+        width: 45vw;
+        min-width: 180px;
+        max-width: 320px;
+      }
+    }
+    @media (max-width: 600px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        padding: 6px;
+      }
+      .item {
+        width: 95vw;
+        min-width: 0;
+        max-width: 99vw;
+        padding: 10px 4px 14px 4px;
+      }
+      .item .image {
+        height: 90px;
+      }
+      .item h2 {
+        font-size: 1.1rem;
+      }
+    }
+
+    /* Responsive video iframe */
+    .iframe-wrapper {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      height: 0;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      margin-bottom: 18px;
+    }
+    .iframe-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* Responsive footer */
+    @media (max-width: 800px) {
+      .footer-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 0 8px;
+      }
+      .footer-section {
+        min-width: 0;
+        width: 100%;
+        text-align: center;
+      }
+    }
+    @media (max-width: 600px) {
+      .footer-container {
+        gap: 10px;
+        padding: 0 2vw;
+      }
+      .footer-section {
+        padding: 0 2vw;
+      }
+      .footer-bottom {
+        font-size: 0.9rem;
+        padding: 10px 0 6px 0;
+      }
+    }
+  </style>
+
+  <!-- Slider -->
+  <div class="slider">
+    <div class="slide active">
+      <img src="https://rukminim2.flixcart.com/fk-p-flap/3240/540/image/da3a53e6bdbd1e9a.jpg?q=60" alt="Slide 1">
+    </div>
+    <div class="slide">
+      <img src="https://rukminim2.flixcart.com/fk-p-flap/3240/540/image/180a6b2d0708f53f.jpeg?q=60" alt="Slide 2">
+    </div>
+    <div class="slide">
+      <img src="https://rukminim2.flixcart.com/fk-p-flap/3240/540/image/f1b761142664c300.jpeg?q=60" alt="Slide 3">
+    </div>
+    <button class="prev">❮</button>
+    <button class="next">❯</button>
+  </div>
+
+  <!-- Notes Section -->
+  <div class="container">
+    <!-- Note items -->
+    <div class="item">
+      <div class="image">
+        <img src="./Akhand classes logo recreate - Copy.svg" alt="Class 9th Notes Logo" />
+      </div>
+      <div class="head">
+        <h2>Class 9th Notes</h2>
+        <p><a href="#">Download</a></p>
+      </div>
+    </div>
+    <!-- Repeat for other classes -->
+    <div class="item">
+      <div class="image">
+        <img src="./Akhand classes logo recreate - Copy.svg" alt="Class 10th Notes" />
+      </div>
+      <div class="head">
+        <h2>Class 10th Notes</h2>
+        <p><a href="#">Download</a></p>
+      </div>
+    </div>
+    <div class="item">
+      <div class="image">
+        <img src="./Akhand classes logo recreate - Copy.svg" alt="Class 11th Notes" />
+      </div>
+      <div class="head">
+        <h2>Class 11th Notes</h2>
+        <p><a href="#">Download</a></p>
+      </div>
+    </div>
+    <div class="item">
+      <div class="image">
+        <img src="./Akhand classes logo recreate - Copy.svg" alt="Class 12th Notes" />
+      </div>
+      <div class="head">
+        <h2>Class 12th Notes</h2>
+        <p><a href="#">Download</a></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slider -->
+<div class="slider"> ... </div>
+
+<div class="content" style="text-align: center; padding: 30px;">
+  <h2>Watch Our Introduction Video</h2>
+  <div class="iframe-wrapper">
+    <iframe class="video-frame"
+      src="https://www.youtube.com/embed/JGwWNGJdvx8"
+      width="100%" height="415"
+      frameborder="0" allowfullscreen></iframe>
+  </div>
+</div>
+
+
+
+
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>About</h3>
+        <p>I’m Ashutosh Kumar, passionate about web development and education.</p>
+      </div>
+      <div class="footer-section">
+        <h3>Follow Me</h3>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.instagram.com/ashu_kr11/"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div class="footer-section newsletter">
+        <h3>Subscribe</h3>
+        <p>Get updates & resources:</p>
+        <input type="email" placeholder="Your email" />
+        <button>Subscribe</button>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; <span id="year"></span> Ashutosh Kumar | All rights reserved.
+    </div>
+  </footer>
+
+  <!-- Slider Script -->
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    let currentIndex = 0;
+    let autoSlideInterval = setInterval(nextSlide, 3000);
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.style.display = i === index ? 'block' : 'none';
+      });
+    }
+
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % slides.length;
+      showSlide(currentIndex);
+    }
+
+    function prevSlide() {
+      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+      showSlide(currentIndex);
+    }
+
+    document.querySelector('.next').addEventListener('click', () => {
+      nextSlide();
+      resetAutoSlide();
+    });
+
+    document.querySelector('.prev').addEventListener('click', () => {
+      prevSlide();
+      resetAutoSlide();
+    });
+
+    const slider = document.querySelector('.slider');
+    slider.addEventListener('mouseenter', () => clearInterval(autoSlideInterval));
+    slider.addEventListener('mouseleave', () => autoSlideInterval = setInterval(nextSlide, 3000));
+
+    function resetAutoSlide() {
+      clearInterval(autoSlideInterval);
+      autoSlideInterval = setInterval(nextSlide, 3000);
+    }
+
+    showSlide(currentIndex);
+  </script>
+
+  <!-- Footer Year -->
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+  <!-- Navbar Search -->
+  <script>
+    const searchInput = document.getElementById('searchBar');
+    const items = document.querySelectorAll('#itemList li');
+    searchInput.addEventListener('keyup', function () {
+      const query = this.value.toLowerCase();
+      items.forEach(item => {
+        const itemName = item.textContent.toLowerCase();
+        item.style.display = itemName.includes(query) ? '' : 'none';
+      });
+    });
+  </script>
+
+</body>
+
+</html>
